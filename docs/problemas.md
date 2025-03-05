@@ -1,5 +1,5 @@
 # Problemas & dores
-
+<!--
 > Apresente os principais problemas e dificuldades que o software irá solucionar, oferecendo uma visão geral dos seus benefícios. Os detalhes sobre as funcionalidades serão abordados em seguida. Para nortear a sua descrição, responda à seguinte pergunta: quais são os problemas e dificuldades mais relevantes no contexto atual?
 
 1. Organizar e gerenciar as horas trabalhadas em múltiplos projetos e clientes, levando à desorganização e perda de produtividade.
@@ -8,5 +8,10 @@
 4. A emissão para emissão de notas fiscais eletrônicas é um processo manual demorado e sujeito a erros.
 5. A dificuldade em visualizar o custo real de cada projeto com base nas horas trabalhadas impede a análise da rentabilidade e a tomada de decisões estratégicas.
 6. A ausência de uma solução unificada para gestão de trabalho e tempo força freelancers a usar múltiplas ferramentas, resultando em ineficiência e perda de tempo.
+-->
+
+1. Esquecer do horário de alimentação de um ou mais animais de estimação.
+2. Não se lembrar se o animal foi alimentado.
+3. Quando partilhada a tarefa de manter a alimentação do animal, pode se tornar confusa com os conflitos de horário, falta de comunicação, viagem, etc.
 
 [Retorna](../README.md)
