@@ -12,6 +12,6 @@
 
 1. Esquecer do horário de alimentação de um ou mais animais de estimação.
 2. Não se lembrar se o animal foi alimentado.
-3. Quando partilhada a tarefa de manter a alimentação do animal, pode se tornar confusa com os conflitos de horário, falta de comunicação, viagem, etc.
+3. Quando partilhada, a tarefa de manter a alimentação do animal pode se tornar confusa com os conflitos de horário, falta de comunicação, viagem, etc.
 
 [Retorna](../README.md)
