@@ -33,7 +33,7 @@
   * Carlos utiliza o programa para organizar os diversos freelancers que trabalham com ele.
 -->
 
-## Persona 1: Sandra, estudante de direito
+## Persona 1: Sandra, Estudante de Direito
 
 - **Perfil:**
   * Sandra é estagiária de direito e tem mais de um emprego para manter suas finanças.
