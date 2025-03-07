@@ -55,7 +55,9 @@
 4. Notificação de Ausência de Alimentação: Caso o animal não tenha sido alimentado, após um período será lançada a notificação de ausência de alimentação.
 
 ## Funcionalidades para Carlos, o Veterinário:
-
+1. Adicionar Cachorro: Para centralizar o registro de alimentação dos cães, Carlos poderá adicionar quantos cães forem necessários, com seus nomes, raça e data de nascimento.
+2. Histórico de Alimentação: Através do histórico, Carlos poderá verificar quais os animais que foram alimentados, por quem e quando (Dia e horário).
+3. Notificação de Ausência de Alimentação: Caso algum animal não seja alimentado, a aplicação emite uma notificação para todos os usuários incluídos na tarefa.
 
 
 ## Tabela de Funcionalidades:
