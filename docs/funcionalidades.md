@@ -1,3 +1,4 @@
+<!--
 # Funcionalidades
 
 > Identifique as ações e/ou as interações de cada persona no produto. Descreva as 
@@ -37,5 +38,25 @@
 | Integração com Sistemas de Pagamento e Faturamento Automatizado | - | Sim |
 | Canal de Comunicação Integrado com Notificações | - | Sim |
 | Gerenciamento de Freelancers | - | Sim |
+-->
+
+## Funcionalidades para Sandra, a Estudante de Direito:
+
+1. Registro de tarefas e projetos:
+
+## Funcionalidades para Gisele, a Contadora:
+
+1. Registro de tarefas e projetos:
+
+## Funcionalidades para Carlos, o Veterinário:
+
+1. Registro de tarefas e projetos:
+
+## Tabela de Funcionalidades:
+
+| Funcionalidades | Sandra (Estudante de Direito) | Gisele (Contadora) | Carlos (Veterinário) |
+|---|---|---|
+| Registro de Tarefas e Projetos Detalhados | Sim | - |
+
 
 [Retorna](../README.md)
