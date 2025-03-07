@@ -63,7 +63,7 @@
 ## Tabela de Funcionalidades:
 
 | Funcionalidades | Sandra (Estudante de Direito) | Gisele (Contadora) | Carlos (Veterinário) |
-|---|---|---|
+|---|---|---|---|
 | Criar Alimentação | Sim | - | - |
 | Editar Alimentação | Sim | - | - |
 | Notificação de Alimentação | Sim | - | - |
