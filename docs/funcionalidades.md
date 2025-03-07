@@ -42,21 +42,32 @@
 
 ## Funcionalidades para Sandra, a Estudante de Direito:
 
-1. Registro de tarefas e projetos:
+1. Criar/Editar Alimentação: Para organizar os horários de alimentação pode se criar, editar ou excluir um registro de acordo com a sua preferência.
+2. Criar Alimentação: Para que Sandra programe lembretes para diferentes horários ela poderá criar um novo registro contendo horário, alimento e a quantidade a ser administrada.
+3. Notificação de Alimentação: Caso esteja ocupada com alguma tarefa, a notificação soa para lembrar quando de que está na hora de alimentar o pet.
+4. Histórico de Alimentações: Em caso de esquecimento, Sandra pode verificar se alimentou seu pet através do histórico, contendo data, horário, alimento e a quantidade.
 
 ## Funcionalidades para Gisele, a Contadora:
 
-1. Registro de tarefas e projetos:
+1. Adicionar usuário: Adicionando um usuário, Gisele poderá incluir seus filhos ou outros membros da família no sistema da aplicação, notificando-os para que se lembrem de alimentar o cãozinho.
+2. Histórico de Alimentação: Para verificar se o animal foi alimentado, basta que Gisele acesse o histórico e identifique o registro da alimentação.
+3. Histórico de Alimentação: Gisele poderá verificar quem alimentou o pet acessando o histórico.
+4. Notificação de Ausência de Alimentação: Caso o animal não tenha sido alimentado, após um período será lançada a notificação de ausência de alimentação.
 
 ## Funcionalidades para Carlos, o Veterinário:
 
-1. Registro de tarefas e projetos:
+
 
 ## Tabela de Funcionalidades:
 
 | Funcionalidades | Sandra (Estudante de Direito) | Gisele (Contadora) | Carlos (Veterinário) |
 |---|---|---|
-| Registro de Tarefas e Projetos Detalhados | Sim | - |
+| Criar Alimentação | Sim | - | - |
+| Editar Alimentação | Sim | - | - |
+| Notificação de Alimentação | Sim | - | - |
+| Histórico de Alimentação | Sim | Sim | - |
+| Adicionar Usuário | Sim | - | - |
+| Notificação de Ausência de Alimentação | - | Sim | - |
 
 
 [Retorna](../README.md)
