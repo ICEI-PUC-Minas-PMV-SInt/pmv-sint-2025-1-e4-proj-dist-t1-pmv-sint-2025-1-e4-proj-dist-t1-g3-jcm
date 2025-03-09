@@ -74,7 +74,7 @@
   * Ele deseja verificar quais os animais que foram alimentados, por quem e quando (Dia e horário);
   * Ele espera saber se algum animal não foi alimentado.
 - **Atividades:**
-  * Como não tem muito tempo para estar presente no hotel para cães, Carlos usaria o software para administrar o hotel, à distância.
+  * Como não tem muito tempo para estar presente no hotel para cães, Carlos usaria o software para administrar o hotel à distância.
   * Carlos usaria o software para evitar de ter de fazer ligações para verificar a alimentação dos animais.
   * Carlos usaria o software para evitar o uso de grupos de Whats App, que tornam a tarefa confusa.
   * Carlos usaria o software em complemento ao registrado nas câmeras de segurança instaladas no hotel.
