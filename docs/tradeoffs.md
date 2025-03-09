@@ -16,7 +16,7 @@ As categorias de requisitos não-funcionais para o produto de software "Já Cão
    
    a. O sistema deve ser robusto e livre de erros, sendo equipado com mecanismos para enfrentar falhas, garantir a recuperação de dados e assegurar uma disponibilidade de 99,9%, o que significa que ele não deve exceder 8,76 horas de inatividade por ano.
    
-   b. O sistema deve requerer a autenticação de usuários para acessar seu perfil, informações do aninal e usuários secundários (este, caso esteja logado como administrador), suportando um mecanismo robusto, como autenticação de dois fatores, para garantir acesso seguro às informações. Em relação à segurança, após três tentativas de login falhas, o usuário é bloqueado temporariamente para evitar tentativas de força bruta. Além disso, as senhas são armazenadas com segurança usando técnicas de hash e sal.
+   b. O sistema deve requerer a autenticação de usuários para acessar seu perfil, informações do animal e usuários secundários (este, caso esteja logado como administrador), suportando um mecanismo robusto, como autenticação de dois fatores, para garantir acesso seguro às informações. Em relação à segurança, após três tentativas de login falhas, o usuário é bloqueado temporariamente para evitar tentativas de força bruta. Além disso, as senhas são armazenadas com segurança usando técnicas de hash e sal.
 
 4. **Suportabilidade**: 
    
