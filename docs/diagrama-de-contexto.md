@@ -5,6 +5,8 @@
 ![Diagrama de Contexto do ToDoDist](figuras/diagrama-de-contexto.png)
 -->
 
-![Diagrama de Contexto do Já Cão Mi?](figuras/JaCaoMi - Diagrama Contexto.png)
+![Diagrama de Contexto do Já Cão Mi?](figuras/Ja cao Mi Diagrama Contexto.png)
+
+<img src="figuras/Ja cao Mi Diagrama Contexto.png" width="411">
 
 [Retorna](../README.md)
