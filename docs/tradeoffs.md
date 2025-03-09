@@ -1,14 +1,14 @@
 # Trade-offs de Características de Qualidade
 
-As categorias de requisitos não-funcionais para o produto de software "FocusFlow", conforme o modelo FURPS+, seriam:
+As categorias de requisitos não-funcionais para o produto de software "Já Cão Mi?", conforme o modelo FURPS+, seriam:
 
 1. **Usabilidade**: 
    
-   a. O sistema deve ser fácil de usar com uma interface intuitiva e amigável, permitindo que 90% dos usuários realizem tarefas sem precisar de assistência após uma única sessão de treinamento.
+   a. O sistema deve ser fácil de usar com uma interface intuitiva e amigável, permitindo que 90% dos usuários criem seus perfis, cadastrem seu animal e programem sua alimentação sem a necessidade de assistência após uma única sessão de treinamento.
 
 2. **Desempenho**: 
    
-   a. O sistema deve ser altamente responsivo às ações do usuário, garantindo que o tempo de resposta para qualquer interação não ultrapasse 2 segundos, independentemente do número de tarefas que está sendo gerenciado.
+   a. O sistema deve ser altamente responsivo às ações do usuário, garantindo que o tempo de resposta para qualquer interação não ultrapasse 2 segundos, independentemente do número de animais cadastrados ou usuários secundários que estejam utilizando a aplicação.
 
    b. O sistema deve possuir escalabilidade horizontal através do desacoplamento, alcançada pela implementação de APIs RESTful.
 
@@ -16,7 +16,7 @@ As categorias de requisitos não-funcionais para o produto de software "FocusFlo
    
    a. O sistema deve ser robusto e livre de erros, sendo equipado com mecanismos para enfrentar falhas, garantir a recuperação de dados e assegurar uma disponibilidade de 99,9%, o que significa que ele não deve exceder 8,76 horas de inatividade por ano.
    
-   b. O sistema deve requerer a autenticação de usuários para acessar suas tarefas e configurações pessoais, suportando um mecanismo robusto, como autenticação de dois fatores, para garantir acesso seguro às informações. Em relação à segurança, após três tentativas de login falhas, o usuário é bloqueado temporariamente para evitar tentativas de força bruta. Além disso, as senhas são armazenadas com segurança usando técnicas de hash e sal.
+   b. O sistema deve requerer a autenticação de usuários para acessar seu perfil, informações do aninal e usuários secundários (este, caso esteja logado como administrador), suportando um mecanismo robusto, como autenticação de dois fatores, para garantir acesso seguro às informações. Em relação à segurança, após três tentativas de login falhas, o usuário é bloqueado temporariamente para evitar tentativas de força bruta. Além disso, as senhas são armazenadas com segurança usando técnicas de hash e sal.
 
 4. **Suportabilidade**: 
    
