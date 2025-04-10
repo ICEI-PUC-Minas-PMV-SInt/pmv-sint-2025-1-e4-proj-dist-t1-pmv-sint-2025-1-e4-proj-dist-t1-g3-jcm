@@ -6,4 +6,4 @@
 
 -->
 
-![Diagrama Entidade-Relacionamento](docs/../figuras/Entidade Relacionamento.jpg)
+<img src="figuras/Entidade Relacionamento.jpg" width="916">
