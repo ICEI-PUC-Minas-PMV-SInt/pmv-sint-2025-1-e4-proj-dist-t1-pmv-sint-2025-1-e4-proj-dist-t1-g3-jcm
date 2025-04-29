@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Projeto-jcm-g3-eixo-4-2025-1\Projeto-jcm-g3-eixo-4-2025-1.csproj" />
+    <ProjectReference Include="..\Projetojcm\Projeto-jcm-g3-eixo-4-2025-1.csproj" />
   </ItemGroup>
 
   <ItemGroup>
