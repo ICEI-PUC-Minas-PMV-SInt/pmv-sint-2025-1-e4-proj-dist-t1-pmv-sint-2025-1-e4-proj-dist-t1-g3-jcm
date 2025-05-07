@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Projeto_jcm_g3_eixo_4_2025_1.Models
 {
@@ -11,6 +12,7 @@ namespace Projeto_jcm_g3_eixo_4_2025_1.Models
         [Required]
         public string Nome { get; set; }
         [Required]
+        [JsonIgnore]
         public string Password { get; set; }
         [Required]
         public Perfil Perfil { get; set; }

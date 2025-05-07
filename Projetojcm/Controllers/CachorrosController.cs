@@ -34,13 +34,14 @@ namespace Projeto_jcm_g3_eixo_4_2025_1.Controllers
             _context.Cachorros.Add(model);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetById", new {id = model.Id}, model);
+            return CreatedAtAction("GetById", new { id = model.Id }, model);
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult> GetById(int id)
-        {
+        {   
             var model = await _context.Cachorros
+                .Include(t => t.Usuarios).ThenInclude(t => t.Usuario)
                 .Include(t => t.Alimentacoes)
                 .FirstOrDefaultAsync(c => c.Id == id);
             if (model == null) return NotFound();
@@ -83,6 +84,31 @@ namespace Projeto_jcm_g3_eixo_4_2025_1.Controllers
             model.Links.Add(new LinkDto(model.Id, Url.ActionLink(), rel: "self", metodo: "GET"));
             model.Links.Add(new LinkDto(model.Id, Url.ActionLink(), rel: "update", metodo: "PUT"));
             model.Links.Add(new LinkDto(model.Id, Url.ActionLink(), rel: "delete", metodo: "Delete"));
+        }
+
+        [HttpPost("{id}/usuarios")]
+        public async Task<ActionResult> AddUsuario(int id, CachorroUsuarios model )
+        {
+            if(id != model.CachorroId) return BadRequest();
+            _context.CachorrosUsuarios.Add(model);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetById", new { id = model.CachorroId }, model);
+        }
+
+        [HttpDelete("{id}/usuarios/{usuarioId}")]
+        public async Task<ActionResult> DeleteUsuario(int id, int usuarioId)
+        {
+            var model = await _context.CachorrosUsuarios
+                .Where(c => c.CachorroId == id && c.UsuarioId == usuarioId)
+                .FirstOrDefaultAsync();
+
+            if(model == null) return NotFound();
+
+            _context.CachorrosUsuarios.Remove(model);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
         }
 
     }
