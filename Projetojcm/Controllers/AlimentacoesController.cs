@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Projeto_jcm_g3_eixo_4_2025_1.Models;
 
 namespace Projeto_jcm_g3_eixo_4_2025_1.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class AlimentacoesController : ControllerBase
@@ -16,12 +18,52 @@ namespace Projeto_jcm_g3_eixo_4_2025_1.Controllers
             _context = context;
         }
 
+        /*        [HttpGet]
+                public async Task<ActionResult> GetAll()
+                {
+                    var model = await _context.Alimentacoes.ToListAsync();
+                    return Ok(model);
+                }
+        */
+
         [HttpGet]
-        public async Task<ActionResult> GetAll()
+        public async Task<ActionResult<IEnumerable<Alimentacao>>> GetAll()
         {
-            var model = await _context.Alimentacoes.ToListAsync();
-            return Ok(model);
+            var alimentacoes = await _context.Alimentacoes
+                                             .Include(a => a.Cachorro) // 🔹 Garante que os dados do cachorro sejam carregados
+                                             .ToListAsync();
+
+            return Ok(alimentacoes);
         }
+
+
+        [HttpGet("buscar")]
+        public async Task<ActionResult<IEnumerable<Alimentacao>>> BuscarAlimentacoes(
+            [FromQuery] string? nomeCachorro,
+            [FromQuery] TipoAlimentacao? tipo,
+            [FromQuery] DateTime? data)
+        {
+            var query = _context.Alimentacoes
+                                .Include(a => a.Cachorro) // 🔹 Inclui os dados do cachorro na consulta
+                                .AsQueryable();
+
+            if (!string.IsNullOrEmpty(nomeCachorro))
+                query = query.Where(a => a.Cachorro.Nome.Contains(nomeCachorro)); // 🔹 Filtra por nome
+
+            if (tipo.HasValue)
+                query = query.Where(a => a.Tipo == tipo.Value);
+
+            if (data.HasValue)
+                query = query.Where(a => a.Hora.Date == data.Value.Date);
+
+            var resultados = await query.ToListAsync();
+
+            if (!resultados.Any())
+                return NotFound("Nenhuma alimentação encontrada para os filtros aplicados.");
+
+            return Ok(resultados);
+        }
+
 
         [HttpPost]
         public async Task<ActionResult> Create(Alimentacao model)

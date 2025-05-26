@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Projeto_jcm_g3_eixo_4_2025_1.Models;
 
 namespace Projeto_jcm_g3_eixo_4_2025_1.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CachorrosController : ControllerBase
@@ -16,11 +18,27 @@ namespace Projeto_jcm_g3_eixo_4_2025_1.Controllers
             _context = context;
         }
 
+        /*
         [HttpGet]
         public async Task<ActionResult> GetAll()
         {
             var model = await _context.Cachorros.ToListAsync();
             return Ok(model);
+        }
+        */
+
+        [HttpGet]
+        public async Task<ActionResult> GetAll([FromQuery] string nome)
+        {
+            var query = _context.Cachorros.AsQueryable();
+
+            if(!string.IsNullOrEmpty(nome))
+            {
+                query = query.Where(c => c.Nome.Contains(nome));
+            }
+
+            var cachorros =  await query.ToListAsync();
+            return Ok(cachorros);
         }
 
         [HttpPost]

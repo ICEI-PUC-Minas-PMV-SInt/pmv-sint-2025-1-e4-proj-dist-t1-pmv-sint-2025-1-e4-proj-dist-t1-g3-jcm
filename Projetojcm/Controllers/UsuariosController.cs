@@ -1,10 +1,16 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Projeto_jcm_g3_eixo_4_2025_1.Models;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
 namespace Projeto_jcm_g3_eixo_4_2025_1.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UsuariosController : ControllerBase
@@ -16,12 +22,30 @@ namespace Projeto_jcm_g3_eixo_4_2025_1.Controllers
             _context = context;
         }
 
+        /*
         [HttpGet]
         public async Task<ActionResult> GetAll()
         {
             var model = await _context.Usuarios.ToListAsync();
             return Ok(model);
         }
+        */
+
+        //--------------------------------------------------------------
+        [HttpGet]
+        public async Task<ActionResult> GetAll([FromQuery] string nome)
+        {
+            var query = _context.Usuarios.AsQueryable();
+
+            if (!string.IsNullOrEmpty(nome))
+            {
+                query = query.Where(u => u.Nome.Contains(nome));
+            }
+
+            var usuarios = await query.ToListAsync();
+            return Ok(usuarios);
+        }
+        //--------------------------------------------------------------
 
         [HttpPost]
         public async Task<ActionResult> Create(UsuarioDto model)
@@ -81,6 +105,41 @@ namespace Projeto_jcm_g3_eixo_4_2025_1.Controllers
             await _context.SaveChangesAsync();
 
             return NoContent();
+        }
+
+        [AllowAnonymous]
+        [HttpPost("authenticate")]
+        public async Task<ActionResult> Authenticate(AuthenticateDto model)
+        {
+            var usuarioDb = await _context.Usuarios.FindAsync(model.Id);
+
+            if (usuarioDb == null || !BCrypt.Net.BCrypt.Verify(model.Password, usuarioDb.Password))
+                return Unauthorized();
+
+            var jwt = GenerateJwtToken(usuarioDb);
+
+            return Ok(new {jwtToken = jwt});
+        }
+
+        private string GenerateJwtToken(Usuario model)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes("Ry74cBQva5dThwbwchR9jhbtRFnJxWSZ");
+            var claims = new ClaimsIdentity(new Claim[] 
+            {
+                new Claim(ClaimTypes.NameIdentifier, model.Id.ToString()),
+                new Claim(ClaimTypes.Role, model.Perfil.ToString())
+            });
+
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = claims,
+                Expires = DateTime.UtcNow.AddHours(8),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key),
+                SecurityAlgorithms.HmacSha256Signature)
+            };
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
         }
     }
 }

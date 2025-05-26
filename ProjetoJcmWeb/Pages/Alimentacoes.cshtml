@@ -1,0 +1,83 @@
+﻿@page
+@model ProjetoJcmWeb.Pages.AlimentacoesModel
+
+<div class="row mb-3">
+    <div class="col-md-6">
+        <input type="text" class="form-control" id="campo-busca-nome" placeholder="Nome do cachorro">
+    </div>
+    <div class="col-md-6">
+        <button class="btn btn-primary" onclick="buscarAlimentacoes()">Buscar</button>
+        <button class="btn btn-secondary" onclick="fetchAlimentacoes()">Mostrar Todos</button>
+    </div>
+</div>
+
+<h2 class="text-center mb-4">Registro de Alimentações</h2>
+
+<button class="btn btn-success mb-3" onclick="abrirFormularioAlimentacao()">Registrar Alimentação</button>
+
+<ul id="alimentacoes-list" class="list-group"></ul>
+
+<div id="formulario-alimentacao" class="formulario-container" style="display:none">
+    <h3>Nova Alimentação</h3>
+
+    <label>Selecione o Cachorro:</label>
+    <select id="alimentacao-cachorro-id" class="form-control">
+        <option value="">Selecione um cachorro</option>
+    </select>
+
+    <label>Tipo de Alimentação:</label>
+    <select id="tipo-alimentacao">
+        <option value="0">Ração Seca</option>
+        <option value="1">Ração Úmida</option>
+        <option value="2">Alimento Caseiro</option>
+        <option value="3">Petisco</option>
+        <option value="4">Alimento Cru</option>
+    </select>
+
+    <label>Quantidade:</label>
+    <input type="number" id="quantidade-alimentacao" placeholder="Quantidade" />
+
+    <label>Unidade de Medida:</label>
+    <select id="unidade-medida">
+        <option value="0">Copo</option>
+        <option value="1">Gramas</option>
+        <option value="2">Scoop</option>
+        <option value="3">Vasilhame</option>
+    </select>
+
+    <button class="btn btn-success btn-sm" onclick="salvarAlimentacao()">Salvar</button>
+    <button class="btn btn-danger btn-sm" onclick="fecharFormularioAlimentacao()">Cancelar</button>
+
+</div>
+
+<div id="formulario-edicao" class="formulario-container" style="display:none">
+    <h3>Editar Alimentação</h3>
+
+    <label>Cachorro:</label>
+    <p id="edicao-cachorro-nome" class="fw-bold"></p>
+
+    <label>Tipo de Alimentação:</label>
+    <select id="edicao-tipo-alimentacao">
+        <option value="0">Ração Seca</option>
+        <option value="1">Ração Úmida</option>
+        <option value="2">Alimento Caseiro</option>
+        <option value="3">Petisco</option>
+        <option value="4">Alimento Cru</option>
+    </select>
+
+    <label>Quantidade:</label>
+    <input type="number" id="edicao-quantidade-alimentacao" placeholder="Quantidade" />
+
+    <label>Unidade de Medida:</label>
+    <select id="edicao-unidade-medida">
+        <option value="0">Copo</option>
+        <option value="1">Gramas</option>
+        <option value="2">Scoop</option>
+        <option value="3">Vasilhame</option>
+    </select>
+
+    <button id="botao-atualizar" class="btn btn-warning btn-sm">Atualizar</button>
+    <button class="btn btn-danger btn-sm" onclick="fecharFormularioEdicao()">Cancelar</button>
+</div>
+
+<script src="/js/alimentacoes.js"></script>
