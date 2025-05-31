@@ -1,0 +1,64 @@
+﻿@page
+@model ProjetoJcmWeb.Pages.CachorrosModel
+
+<div class="row mb-3">
+    <div class="col-md-6">
+        <input type="text" class="form-control" id="campo-busca" placeholder="Digite ID ou nome...">
+    </div>
+    <div class="col-md-6 text-end">
+        <button class="btn btn-primary" onclick="buscarCachorro()">Buscar</button>
+        <button class="btn btn-secondary" onclick="fetchCachorros()">Mostrar Todos</button>
+    </div>
+</div>
+
+<h2 class="text-center mb-4">Lista de Cachorros</h2>
+
+<!-- ************************************************************************************************ -->
+
+<button class="btn btn-success mb-3" onclick="abrirFormularioCachorro()">Adicionar Cachorro</button>
+
+<div id="formulario-cadastro-cachorro" class="formulario-container" style="display: none;">
+    <h3>Novo Cachorro</h3>
+
+    <input type="text" id="nome-cachorro" placeholder="Nome">
+    <input type="text" id="raca-cachorro" placeholder="Raça">
+    <input type="number" id="nascimento-cachorro" placeholder="Ano de Nascimento">
+
+    <button class="btn btn-warning btn-sm" onclick="cadastrarCachorro()">Cadastrar</button>
+    <button class="btn btn-danger btn-sm" onclick="fecharFormularioCachorro()">Cancelar</button>
+</div>
+
+<ul id="cachorros-list" class="list-group"></ul>
+
+<!-- ************************************************************************************************ -->
+
+<div id="formulario-edicao-cachorro" class="formulario-container" style="display: block;">
+
+    <h3>Editar Cachorro</h3>
+
+    <input type="hidden" id="edit-id-cachorro"> <!-- Adiciona um campo oculto para ID -->
+
+    <input type="text" id="edit-nome-cachorro">
+    <input type="text" id="edit-raca-cachorro">
+    <input type="number" id="edit-nascimento-cachorro">
+
+<!--
+    <input type="text" id="nome-cachorro">
+    <input type="text" id="raca-cachorro">
+    <input type="number" id="nascimento-cachorro">
+-->
+
+    <button class="btn btn-warning btn-sm" id="botao-salvar" onclick="salvarEdicaoCachorro()">Salvar Alterações</button>
+    <button class="btn btn-danger btn-sm" onclick="fecharFormularioEdicaoCachorro()">Cancelar</button>
+</div>
+
+<!-- ************************************************************************************************ -->
+
+<footer class="border-top footer text-muted">
+    <div class="container">
+        &copy; 2025 - ProjetoJcmWeb - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    </div>
+</footer>
+
+
+<script src="/js/cachorros.js"></script>

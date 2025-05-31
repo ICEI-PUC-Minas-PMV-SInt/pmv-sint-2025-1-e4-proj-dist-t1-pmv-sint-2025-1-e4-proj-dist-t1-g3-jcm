@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Projeto-jcm-g3-eixo-4-2025-1": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:58158;http://localhost:58159"
+    }
+  }
+}

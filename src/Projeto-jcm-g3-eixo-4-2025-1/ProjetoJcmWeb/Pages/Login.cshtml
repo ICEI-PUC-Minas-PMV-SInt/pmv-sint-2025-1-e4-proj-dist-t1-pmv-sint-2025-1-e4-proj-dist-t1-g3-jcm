@@ -1,0 +1,60 @@
+﻿@page
+@model ProjetoJcmWeb.Pages.LoginModel
+
+<h2>Login</h2>
+
+<form id="login-form">
+
+    <label for="login-id">ID:</label>
+    <input type="number" id="login-id" required>
+
+    <label for="login-password">Senha:</label>
+    <input type="password" id="login-password" required>
+
+    <button type="submit">Entrar</button>
+
+</form>
+
+<script>
+
+        const apiUrl = "https://localhost:44315"; // Ajuste para a porta correta da API
+
+        document.getElementById("login-form").addEventListener("submit", async (e) => {
+            e.preventDefault(); // Impede o envio tradicional do formulário
+
+        const id = document.getElementById("login-id").value;
+        const password = document.getElementById("login-password").value;
+
+        try {
+            const response = await fetch(`${apiUrl}/api/Usuarios/authenticate`, {
+                  method: "POST",
+                  headers: {"Content-Type": "application/json" },
+                  body: JSON.stringify({id, password}) // Enviando os dados para a API
+            });
+
+        if (!response.ok) {
+                alert("Erro ao autenticar! Verifique seu login.");
+                return;
+            }
+
+        const data = await response.json();
+        console.log("Resposta da API:", data);             // Teste de retorno da API
+        sessionStorage.setItem("JwtToken", data.jwtToken); // Token armazenado em sessionStorage.
+        sessionStorage.setItem("UsuarioNome", data.nome);  // Salva o nome do usuário
+
+        alert(`Olá, ${data.nome}!`);
+
+        // Exibe o token no console (para depuração)
+        //console.log("Token salvo:", data.jwtToken);
+
+        // Redirecionar para a página de usuários
+        window.location.href = "/Usuarios";
+
+            } catch (error) {
+            console.error("Erro ao acessar API:", error);
+            alert("Falha na conexão com o servidor.");
+            }
+        });
+
+</script>
+

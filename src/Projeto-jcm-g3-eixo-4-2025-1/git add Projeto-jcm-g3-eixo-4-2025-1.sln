@@ -1,0 +1,40 @@
+[33m6ddd124[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m Entrega da Etapa 3
+[33m279a962[m Criação do Controller Usuário e Criptografia da Senha
+[33macf4ab4[m Troca da referência no JcmApiTest para adaptar à config. de diretório
+[33m9f41b3a[m Reorganizando projeto: movendo arquivos para Projetojcm e adicionando JcmApiTest ao repositório principal
+[33m02097fd[m teste
+[33mcefd99e[m Implementação do modelo de usuário e seu controller, Implementação do teste de unidade para a entidade cachorro.
+[33m482712c[m Criação do Controller Alimentacoes e Adição dos Links de Referências (LinkDto).
+[33mdd88c29[m Criação do Controller Cachorros
+[33m41a51d9[m Configuração do EntityFrameWork
+[33m25bf4e1[m Add project files.
+[33m8a6594e[m Add .gitattributes and .gitignore.
+[33mb31e071[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Update personas.md
+[33m28e1592[m Update personas.md
+[33m63c5a0e[m Update README.md
+[33m540d0e7[m Update tradeoffs.md
+[33m4a9eb8c[m Update tradeoffs.md
+[33mfcfa017[m Update funcionalidades.md
+[33m033233c[m Update diagrama-de-contexto.md
+[33m72350d0[m Update diagrama-de-contexto.md
+[33m9da7061[m Add files via upload
+[33m2a62249[m Delete docs/figuras/Ja cao Mi Diagrama Contexto.png
+[33m5a28d14[m Add files via upload
+[33m0eadb0c[m Add files via upload
+[33m5bacadb[m Delete docs/figuras/Ja cao Mi Diagrama Contexto.png
+[33mebe1f53[m Update diagrama-de-contexto.md
+[33m3d6774e[m Add files via upload
+[33m06f36f6[m Delete docs/figuras/JaCaoMi - Diagrama Contexto.png
+[33m9df61e2[m JaCaoMi - Diagrama de Contexto
+[33me9c982c[m Update diagrama-de-contexto.md
+[33m1d48d94[m Update funcionalidades.md
+[33m137c5cf[m Update funcionalidades.md
+[33m0756b46[m Update funcionalidades.md
+[33mb9271fb[m Update funcionalidades.md
+[33m400cae3[m Update personas.md
+[33m4333e7a[m Update personas.md
+[33m439ae7d[m Update expectativas.md
+[33ma752861[m Update problemas.md
+[33m4fd87ed[m Update problemas.md
+[33m2317071[m Update README.md
+[33m9a8e842[m Initial commit
