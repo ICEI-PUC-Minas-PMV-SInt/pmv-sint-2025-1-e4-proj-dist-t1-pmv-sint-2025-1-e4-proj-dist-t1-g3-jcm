@@ -1,5 +1,5 @@
 # Personas
-
+<!--
 > Identifique as principais personas e descreva suas atividades, respondendo às seguintes perguntas:
 > qual é o perfil de cada persona? O que elas esperam do produto de software?
 
@@ -31,5 +31,53 @@
 - **Atividades:**
   * Carlos usa o software para monitorar relatórios de tempo e custos, avaliar o desempenho dos freelancers, aprovar pagamentos, comunicar-se com os freelancers e analisar dados para tomar decisões estratégicas.
   * Carlos utiliza o programa para organizar os diversos freelancers que trabalham com ele.
+-->
+
+## Persona 1: Sandra, Estudante de Direito
+
+- **Perfil:**
+  * Sandra é estagiária de direito e tem mais de um emprego para manter suas finanças.
+  * Pelo excesso de trabalho, acaba tendo muitas tarefas ocupando seu tempo.
+  * Sandra utiliza o despertador de seu celular para organizar a alimentação de seu pet, o que acaba se misturando e perdendo no meio de outros despertadores programados.
+- **Expectativas:**
+  * Preocupada com a saúde e bem-estar de sua cadelinha Mara, gostaria de organizar seus horários de alimentação.
+  * Sandra deseja programar lembretes para diferentes horários.
+- **Atividades:**
+  * Sandra usaria o software para lembrar quando for o horário de alimentar seu pet.
+  * Sandra usaria o software em caso de esquecer se alimentou seu pet.
+
+## Persona 2: Gisele Medeiros, Contadora
+
+- **Perfil:**
+  * Gisele é casada e tem dois filhos.
+  * Sua rotina de trabalho é muito ocupada e irregular.
+  * Depende de lembretes anotados em calendários expostos em vários ambientes de seu dia-a-dia como, a mesa do escritório onde trabalha e a geladeira de sua cozinha.
+- **Expectativas:**
+  * Gisele quer garantir que seus filhos também lembrem-se de alimentar o cãozinho da família.
+  * Gisele necessita que os lembretes possam ser compartilhados com outros membros da família.
+  * Ela espera que a interface seja simples e intuitiva.
+  * Ela espera que as notificações sejam claras e visíveis.
+- **Atividades:**
+  * Gisele usaria o software para verificar se o animal foi alimentado.
+  * Gisele usaria o software para verificar quem alimentou o pet.
+  * Gisele usaria o software para, em caso de não ter sido alimentado, que ela mesma alimente o pet.
+
+## Persona 3: Carlos , Veterinário
+
+- **Perfil:**
+  * Carlos é proprietário de um hotel especializado para cães
+  * Ele também faz plantões em clínicas veterinárias.
+  * Sua rotina diaria é bem agitada e em alguns dias, incerta.
+- **Expectativas:**
+  * Separar e centralizar o registro de alimentação dos cães
+  * Ele deseja um portal feito especialmente para realizar estes registros.
+  * Ele deseja verificar quais os animais que foram alimentados, por quem e quando (Dia e horário);
+  * Ele espera saber se algum animal não foi alimentado.
+- **Atividades:**
+  * Como não tem muito tempo para estar presente no hotel para cães, Carlos usaria o software para administrar o hotel à distância.
+  * Carlos usaria o software para evitar de ter de fazer ligações para verificar a alimentação dos animais.
+  * Carlos usaria o software para evitar o uso de grupos de Whats App, que tornam a tarefa confusa.
+  * Carlos usaria o software em complemento ao registrado nas câmeras de segurança instaladas no hotel.
+
 
 [Retorna](../README.md)

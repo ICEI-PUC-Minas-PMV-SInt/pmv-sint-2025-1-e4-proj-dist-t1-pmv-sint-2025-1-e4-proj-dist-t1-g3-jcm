@@ -1,15 +1,19 @@
+<!--
 > Para identificar o produto a ser construído, atribua um nome a ele da seguinte forma:
 > imagine o produto em uma caixa e determine qual nome estaria escrito nela.
-
-# ToDoZ
+-->
+# Já Cão Mi?
 
 # Visão do Produto
-
+<!--
 > Uma visão clara do produto é fundamental para definir o alicerce do seu negócio. Essa visão deve expressar o valor central que sua empresa oferece, comunicando-o de forma clara e envolvente aos seus clientes. Utilize o modelo a seguir para construir a visão do seu produto:
 
 > Para [o nome do cliente final], cujo [o problema que precisa ser resolvido]. O [o nome do produto] é [a categoria do produto] que [o benefício-chave, razão para adquiri-lo]. Diferentemente de [alternativa da concorrência], o nosso produto [a diferença-chave].
 
 Para freelancers que trabalham em diversos projetos, cujo o problema é organizar a cobrança de seus serviços e emitir notas fiscais eletrônicas de forma eficiente e com segurança. O ToDoZ é um software de registro de horas trabalhadas em tarefas executadas em projetos para clientes que automatiza a criação de relatórios de cobrança detalhados, facilitando a aprovação do cliente e a emissão da nota fiscal eletrônica com simplicidade, e reduzindo a possibilidade de erros. Diferentemente de outras soluções no mercado, que utilizam diversas ferramentas como planilhas e agendas eletrônicas, o ToDoZ centraliza todo o processo em uma única plataforma, otimizando o fluxo de trabalho diário do freelancer, economizando tempo precioso.
+-->
+
+Para tutores de cães, cujo problema é manter um horário regular de alimentação para seu(s) animal(is). O "Já Cão Mi?" é um aplicativo de organização da alimentação de animais de estimação que automatiza o notificar no horário da refeição, o registro da alimentação contendo horário, data, sendo possível o compartilhamento da tarefa com outros usuários em tempo real. Diferentemente de outros apps, o nosso produto apresenta uma plataforma simples e auto-explicativa que agiliza a organização dentro de poucos cliques.
 
 ## Etapa 1: Requisitos do produto
 

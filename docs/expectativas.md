@@ -1,5 +1,6 @@
 # Expectativas
 
+<!--
 > Neste momento, concentre-se em descrever as expectativas para o produto, sem entrar em detalhes
 > sobre a solução. Enumere as possibilidades que auxiliam a resolver os problemas e dificuldades dos usuários no
 > no cenário correntes, respondendo às perguntas: quais são as expectativas em relação ao produto? Aonde você
@@ -12,6 +13,12 @@
 5. A emissão de notas fiscais de forma simples e integrada tambem é um ponto importante dentro das expectativas.
 6. A expectativa é que o software seja fácil de usar, com uma interface amigável e recursos que simplifiquem a navegação e a execução das tarefas.
 7. Espera-se uma solução completa que atenda às demandas específicas dos freelancers, otimizando seu fluxo de trabalho e produtividade.
+-->
+
+1. Espera-se que o software proposto possa garantir que os pets recebam suas refeições no momento certo.
+2. Os usuários esperam uma solução que permita a programação de horários para alimentação de forma prática e inteligente.
+3. Os usuários esperam ser notificados, quando for o horário de alimentar seus animais.
+4. Espera-se que o produto possa trocar informações entre os usuários que partilhem da tarefa de alimentação de um ou mais pets.
 
 [Retorna](../README.md)
 
