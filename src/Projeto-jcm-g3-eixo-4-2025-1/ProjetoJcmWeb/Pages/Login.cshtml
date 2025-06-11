@@ -6,7 +6,10 @@
 <form id="login-form">
 
     <label for="login-id">ID:</label>
-    <input type="number" id="login-id" required>
+    <input type="number" id="login-id">
+    
+    <label for="login-nome">Nome:</label>
+    <input type="text" id="login-nome">
 
     <label for="login-password">Senha:</label>
     <input type="password" id="login-password" required>
@@ -15,6 +18,8 @@
 
 </form>
 
+<p>Ainda não tem uma conta? <a href="/Cadastro">Crie uma agora</a></p>
+
 <script>
 
         const apiUrl = "https://localhost:44315"; // Ajuste para a porta correta da API
@@ -22,14 +27,27 @@
         document.getElementById("login-form").addEventListener("submit", async (e) => {
             e.preventDefault(); // Impede o envio tradicional do formulário
 
-        const id = document.getElementById("login-id").value;
+        //const id = document.getElementById("login-id").value;
+
+        const id = document.getElementById("login-id").value || null;
+        const nome = document.getElementById("login-nome").value || null;
+
         const password = document.getElementById("login-password").value;
+
+        const requestBody = {//RECENTLY ADDED - 10-06-25
+            id: id ? parseInt(id) : null,
+            nome: nome,
+            password: password
+        };
+        console.log("Dados enviados:", requestBody);
 
         try {
             const response = await fetch(`${apiUrl}/api/Usuarios/authenticate`, {
                   method: "POST",
                   headers: {"Content-Type": "application/json" },
-                  body: JSON.stringify({id, password}) // Enviando os dados para a API
+                  body: JSON.stringify(requestBody)
+
+                //body: JSON.stringify({id, password}) // Enviando os dados para a API
             });
 
         if (!response.ok) {
@@ -47,8 +65,8 @@
         // Exibe o token no console (para depuração)
         //console.log("Token salvo:", data.jwtToken);
 
-        // Redirecionar para a página de usuários
-        window.location.href = "/Usuarios";
+        // Redirecionar para a página Inicial Autenticado
+        window.location.href = "/Index";
 
             } catch (error) {
             console.error("Erro ao acessar API:", error);

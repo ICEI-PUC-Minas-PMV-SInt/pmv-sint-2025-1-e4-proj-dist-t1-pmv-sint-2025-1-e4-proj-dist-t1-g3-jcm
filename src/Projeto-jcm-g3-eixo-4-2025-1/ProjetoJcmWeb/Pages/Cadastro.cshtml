@@ -1,0 +1,70 @@
+﻿@page
+@model ProjetoJcmWeb.Pages.CadastroModel
+
+<h2>Criar Conta</h2>
+
+<form id="cadastro-form">
+    <label for="cadastro-nome">Nome:</label>
+    <input type="text" id="cadastro-nome" required>
+
+    <label for="cadastro-password">Senha:</label>
+    <input type="password" id="cadastro-password" required>
+
+    <label for="cadastro-perfil">Perfil:</label>
+    <select id="cadastro-perfil">
+        <option value="0">Administrador</option>
+        <option value="1">Usuário</option>
+    </select>
+
+    <button type="submit">Cadastrar</button>
+</form>
+
+<p>Já tem uma conta? <a href="/Login">Faça login</a></p>
+
+<script>
+    const apiUrl = "https://localhost:44315"; // Ajuste para a porta correta da API
+
+    document.getElementById("cadastro-form").addEventListener("submit", async (e) => {
+        e.preventDefault(); // Impede o envio tradicional do formulário
+
+        const nome = document.getElementById("cadastro-nome").value;
+        const password = document.getElementById("cadastro-password").value;
+        const perfilTexto = document.getElementById("cadastro-perfil").value;
+
+        if (!nome || !password || !perfilTexto) {
+            alert("Por favor, preencha todos os campos!");
+            return;
+        }
+
+        const perfil = perfilTexto === "Administrador" ? 0 : 1;
+
+        try {
+            const response = await fetch(`${apiUrl}/api/Usuarios/Register`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ nome, password, perfil })
+            });
+
+            if (!response.ok) {
+                throw new Error("Erro ao cadastrar usuário.");
+            }
+
+            const data = await response.json();
+
+            // Armazena o token para autenticação automática
+            sessionStorage.setItem("JwtToken", data.token);
+            sessionStorage.setItem("UsuarioNome", nome);
+
+            alert(`Cadastro realizado com sucesso! Bem-vindo, ${nome}`);
+
+            // Redireciona direto para a área protegida
+            window.location.href = "/Usuarios";
+
+        } catch (error) {
+            console.error("Erro ao cadastrar usuário:", error);
+            alert("Falha na conexão com o servidor.");
+        }
+    });
+</script>
