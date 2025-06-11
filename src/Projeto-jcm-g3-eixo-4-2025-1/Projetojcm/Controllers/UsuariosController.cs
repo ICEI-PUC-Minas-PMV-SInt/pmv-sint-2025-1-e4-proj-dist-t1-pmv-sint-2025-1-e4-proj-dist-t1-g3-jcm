@@ -10,7 +10,7 @@ using System.Text;
 
 namespace Projeto_jcm_g3_eixo_4_2025_1.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Administrador")]
     [Route("api/[controller]")]
     [ApiController]
     public class UsuariosController : ControllerBase
@@ -64,6 +64,26 @@ namespace Projeto_jcm_g3_eixo_4_2025_1.Controllers
             return CreatedAtAction("GetById", new { id = novo.Id }, novo);
         }
 
+        [AllowAnonymous]
+        [HttpPost("register")]
+        public async Task<ActionResult> Register(UsuarioDto model)
+        {
+            // Criar usuário e salvar
+            Usuario novo = new Usuario()
+            {
+                Nome = model.Nome,
+                Password = BCrypt.Net.BCrypt.HashPassword(model.Password),
+                Perfil = model.Perfil
+            };
+
+            _context.Usuarios.Add(novo);
+            await _context.SaveChangesAsync();
+
+            // Retornar um JWT opcionalmente
+            var jwt = GenerateJwtToken(novo);
+            return Ok(new { message = "Cadastro realizado!", token = jwt });
+        }
+
         [HttpGet("{id}")]
         public async Task<ActionResult> GetById(int id)
         {
@@ -106,7 +126,7 @@ namespace Projeto_jcm_g3_eixo_4_2025_1.Controllers
 
             return NoContent();
         }
-
+        /*
         [AllowAnonymous]
         [HttpPost("authenticate")]
         public async Task<ActionResult> Authenticate(AuthenticateDto model)
@@ -122,6 +142,28 @@ namespace Projeto_jcm_g3_eixo_4_2025_1.Controllers
             {
                 jwtToken = jwt,
                 nome = usuarioDb.Nome // Retornar o nome de usuário
+            });
+        }
+        */
+        [AllowAnonymous]
+        [HttpPost("authenticate")] //Autenticação mediante Id ou Nome do usuário
+        public async Task<ActionResult> Authenticate(AuthenticateDto model)
+        {
+            if (string.IsNullOrEmpty(model.Nome) && model.Id == null)
+                return BadRequest("Informe o ID ou Nome do usuário.");
+
+            var usuarioDb = await _context.Usuarios
+                .FirstOrDefaultAsync(u => u.Id == model.Id || u.Nome == model.Nome);
+
+            if (usuarioDb == null || !BCrypt.Net.BCrypt.Verify(model.Password, usuarioDb.Password))
+                return Unauthorized();
+
+            var jwt = GenerateJwtToken(usuarioDb);
+
+            return Ok(new
+            {
+                jwtToken = jwt,
+                nome = usuarioDb.Nome
             });
         }
 
